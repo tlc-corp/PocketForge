@@ -1,4 +1,5 @@
 @ECHO OFF
+color 0f
 echo Setting origin...
 echo # [MASTER]
 echo PocketForge

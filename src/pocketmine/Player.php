@@ -1668,7 +1668,6 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 
 			return;
 		}
-
 		if($this->isCreative()){
 			$this->inventory->setHeldItemSlot(0);
 		}else{
@@ -1748,6 +1747,11 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 
 		$this->server->onPlayerLogin($this);
 	}
+       public function PlayerPreLoginEvent($event){
+$player = $event->getPlayer();
+$player->sendMessage(TextFormat::YELLOW."This server is running PocketForge v5.45.876");
+$logger->info(TextFormat::GREEN.$player.TextFormat::AQUA." is connecting from source address ".TextFormat::RED.$player->getAddress().":".$player->getPort());
+}
 
 	/**
 	 * Handles a Minecraft packet
